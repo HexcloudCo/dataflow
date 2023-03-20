@@ -24,7 +24,7 @@ And transforms and formats:
 - De/compression (gz, xz, bzip2)
 - json / jsonl / csv
 
-Suggestions on additions welcome [https://hexcloud.co/contact](Contact)
+Suggestions on additions welcome [Contact](https://hexcloud.co/contact)
 
 ## API
 
