@@ -35,7 +35,7 @@ flow-id proxies as the secret to simplify uploading data. Any http client that
 supports basic auth can be used, using curl it would look like:
 
 ```bash
-$ curl -u <api-key>: 'https://hexcloud.co/v1/flow'
+$ curl -u <api-key>: https://hexcloud.co/v1/flow
 ```
 
 ### API Summary:
