@@ -41,7 +41,7 @@ $ curl -u <api-key>: https://hexcloud.co/v1/flow
 ### API Summary:
 
 List flows:
-```json
+```
 GET /v1/flow
 {
   "data": [
@@ -63,7 +63,7 @@ GET /v1/flow
 ```
 
 Get flow by id:
-```json
+```
 GET /v1/flow/fJJSnseETbPF
 {
   "id": "fJJSnseETbPF",
@@ -82,7 +82,7 @@ GET /v1/flow/fJJSnseETbPF
 ```
 
 Create a flow [example](https://github.com/HexcloudCo/dataflow/blob/main/flows/create-aws-s3-flow.sh):
-```json
+```
 POST /v1/flow/create
 {
   "name": "My Flow",
@@ -123,7 +123,7 @@ curl --data-binary $'this is some log data\nand another line' \
 
 Streams are buffered at the server and periodically rotated and uploaded to a
 sink using the "file" transform:
-```json
+```
 "transforms": [{
   "type": "file",
   "rotate": 60,                 # create a new file every 60 minutes
