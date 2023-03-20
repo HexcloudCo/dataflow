@@ -106,7 +106,7 @@ encoding. Multiple files can be uploaded in a single request and certain
 attributes such as name and path can be overridden. A single post can currently
 be up to 2GB in size.
 
-For example, using curl, this is simply:
+For example, using curl:
 ```bash
 curl -F 'file=@foo.txt' \
      -F 'file=@bar.txt;filename=othername.txt;headers="Path:store/at/alternate/path/"' \
