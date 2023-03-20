@@ -95,6 +95,9 @@ POST /v1/flow/create
 }
 ```
 
+  Note: Flows are currently immutable, we suggest getting the body of an
+  existing flow and using that creating a new one with a new URL.
+
 And there are two endpoints for uploading data:
 ```
 POST /v1/flow/<flow-id>/upload
