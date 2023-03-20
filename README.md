@@ -102,20 +102,23 @@ POST /v1/flow/<flow-id>/upload
 
 Supports
 [multipart/form-data](https://medium.com/@danishkhan.jamia/upload-data-using-multipart-16b54866f5bf)
-encoding. Multiple files can be uploaded in a single upload and certain
+encoding. Multiple files can be uploaded in a single request and certain
 attributes such as name and path can be overridden. A single post can currently
 be up to 2GB in size.
 
 For example, using curl, this is simply:
 ```
-curl -F 'file=@foo.txt' -F 'file=@bar.txt;filename=othername.txt;headers="Path:store/at/alternate/path/"' https://hexcloud.co/v1/flow/<flow-id>/upload
+curl -F 'file=@foo.txt' \\
+     -F 'file=@bar.txt;filename=othername.txt;headers="Path:store/at/alternate/path/"' \\
+     https://hexcloud.co/v1/flow/<flow-id>/upload
 ```
 
 Alternately, stream data (POST limited to 1MB):
 ```
 POST /v1/flow/<flow-id>/stream
 
-curl --data-binary $'this is some log data\nand another line' https://hexcloud.co/v1/flow/<flow-id>/stream
+curl --data-binary $'this is some log data\nand another line' \\
+  https://hexcloud.co/v1/flow/<flow-id>/stream
 ```
 
 Streams are buffered at the server and periodically rotated and uploaded to a
