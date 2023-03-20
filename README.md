@@ -38,7 +38,7 @@ supports basic auth can be used, using curl it would look like:
 $ curl -u <api-key>: https://hexcloud.co/v1/flow
 ```
 
-### API Summary:
+### API Summary
 
 List flows:
 ```
