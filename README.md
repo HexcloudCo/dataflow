@@ -108,8 +108,8 @@ be up to 2GB in size.
 
 For example, using curl, this is simply:
 ```
-curl -F 'file=@foo.txt' \\
-     -F 'file=@bar.txt;filename=othername.txt;headers="Path:store/at/alternate/path/"' \\
+curl -F 'file=@foo.txt' \
+     -F 'file=@bar.txt;filename=othername.txt;headers="Path:store/at/alternate/path/"' \
      https://hexcloud.co/v1/flow/<flow-id>/upload
 ```
 
@@ -117,7 +117,7 @@ Alternately, stream data (POST limited to 1MB):
 ```
 POST /v1/flow/<flow-id>/stream
 
-curl --data-binary $'this is some log data\nand another line' \\
+curl --data-binary $'this is some log data\nand another line' \
   https://hexcloud.co/v1/flow/<flow-id>/stream
 ```
 
