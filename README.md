@@ -38,10 +38,10 @@ supports basic auth can be used, using curl it would look like:
 $ curl -u <api-key>: 'https://hexcloud.co/v1/flow'
 ```
 
-Here is a summary of the api:
+### API Summary:
 
 List flows:
-```
+```json
 GET /v1/flow
 {
   "data": [
@@ -63,7 +63,7 @@ GET /v1/flow
 ```
 
 Get flow by id:
-```
+```json
 GET /v1/flow/fJJSnseETbPF
 {
   "id": "fJJSnseETbPF",
@@ -82,7 +82,7 @@ GET /v1/flow/fJJSnseETbPF
 ```
 
 Create a flow [example](https://github.com/HexcloudCo/dataflow/blob/main/flows/create-aws-s3-flow.sh):
-```
+```json
 POST /v1/flow/create
 {
   "name": "My Flow",
@@ -107,14 +107,14 @@ attributes such as name and path can be overridden. A single post can currently
 be up to 2GB in size.
 
 For example, using curl, this is simply:
-```
+```bash
 curl -F 'file=@foo.txt' \
      -F 'file=@bar.txt;filename=othername.txt;headers="Path:store/at/alternate/path/"' \
      https://hexcloud.co/v1/flow/<flow-id>/upload
 ```
 
 Alternately, stream data (POST limited to 1MB):
-```
+```bash
 POST /v1/flow/<flow-id>/stream
 
 curl --data-binary $'this is some log data\nand another line' \
@@ -123,8 +123,8 @@ curl --data-binary $'this is some log data\nand another line' \
 
 Streams are buffered at the server and periodically rotated and uploaded to a
 sink using the "file" transform:
-```
-transforms: [{
+```json
+"transforms": [{
   "type": "file",
   "rotate": 60,                 # create a new file every 60 minutes
   "maxsize": 1000000,           # create a new file part every ~megabyte
