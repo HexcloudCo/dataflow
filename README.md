@@ -1,12 +1,10 @@
 # Hexcloud Dataflow
----
 
 Dataflow is a service and api that allows you to more easily ship your data to
 the cloud. Using the api you create "flows" which allow you to stream and
 upload files, transform that data, and ultimately place it in the cloud for use
 by other systems or archival.
 
----
 ## Use-cases
 
 The primary initial use-case is uploading data to cloud storage where it can be
@@ -28,7 +26,6 @@ And transforms and formats:
 
 Suggestions on additions welcome [https://hexcloud.co/contact](Contact)
 
----
 ## API
 
 Authentication uses an api-key over http basic auth - the api-key is the
@@ -46,18 +43,18 @@ Here is a summary of the api:
 List flows:
 ```
 GET /v1/flow
-{                                                                                                       
-  "data": [                                                                                             
-    {                                                                                                   
-      "id": "fJJSnseETbPF",                                                                             
+{
+  "data": [
+    {
+      "id": "fJJSnseETbPF",
       "created": "2023-03-19T19:24:33.655945Z",
       "updated": "2023-03-19T19:24:33.655945Z",
-      "deleted": null,                              
+      "deleted": null,
       "name": "My First Flow",
       "user_id": "u1qmQL5Zu21J",
-      "transforms": [                               
+      "transforms": [
            ...
-      ], 
+      ],
       "sinks": [
         ...
       ]
@@ -82,6 +79,7 @@ GET /v1/flow/fJJSnseETbPF
     ...
   ]
 }
+```
 
 Create a flow [example](https://github.com/HexcloudCo/dataflow/blob/main/flows/create-aws-s3-flow.sh):
 ```
@@ -122,7 +120,6 @@ curl --data-binary $'this is some log data\nand another line' https://hexcloud.c
 
 Streams are buffered at the server and periodically rotated and uploaded to a
 sink using the "file" transform:
-
 ```
 transforms: [{
   "type": "file",
