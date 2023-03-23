@@ -1,0 +1,6 @@
+[
+  {"name": "id", "type": "string", "mode": "required"},
+  {"name": "ts", "type": "timestamp", "mode": "required"},
+  {"name": "x", "type": "integer", "mode": "required"},
+  {"name": "properties", "type": "string", "mode": "nullable"}
+]
