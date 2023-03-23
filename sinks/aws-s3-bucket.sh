@@ -2,6 +2,8 @@
 
 # Create and aws s3 bucket and iam user with the proper permissions to access
 # it. Outputs the auth for a flow.
+#
+# See the corresponding scripts in flows for how to create the flow.
 
 # sudo apt install awscli
 # brew install awscli

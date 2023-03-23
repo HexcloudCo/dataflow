@@ -2,6 +2,8 @@
 
 # Create a google cloud gcs bucket and service account with the proper
 # permissions to access it. Outputs the auth for the flow into a file.
+#
+# See the corresponding scripts in flows for how to create the flow.
 
 # https://cloud.google.com/sdk/docs/install
 

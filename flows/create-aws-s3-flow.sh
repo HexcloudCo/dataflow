@@ -4,6 +4,9 @@ set -eo pipefail
 
 # This is just an example, fill in the vars as you need...
 #
+# See the corresponding scripts in sinks for help in creating the cloud
+# resources.
+#
 # The file transform is for a stream, you can omit it if you're only uploading
 # files.
 
