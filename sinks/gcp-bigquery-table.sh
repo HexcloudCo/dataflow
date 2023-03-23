@@ -19,7 +19,7 @@ GCLOUD="gcloud --project=$PROJECT"
 BQ="bq --project_id=$PROJECT"
 
 $BQ mk ${DATASET}
-$BQ mk --schema=$SCHEMA ${DATASET}.${TABLE}
+$BQ mk --time_partitioning_field=ts --schema=$SCHEMA ${DATASET}.${TABLE}
 
 $GCLOUD iam service-accounts create $NAME
 
