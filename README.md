@@ -9,8 +9,8 @@ This repository contains helper scripts and examples for using the service.
 
 For examples on creating resources in your cloud for Dataflow, see: [Sinks](https://github.com/HexcloudCo/dataflow/tree/main/sinks)
 
-For examples on creating flows within Data, see: [Flows](https://github.com/HexcloudCo/dataflow/tree/main/flows)
+For examples on creating flows within Dataflow, see: [Flows](https://github.com/HexcloudCo/dataflow/tree/main/flows)
 
 For API documentation see: [Docs](https://hexcloud.co/docs)
 
-Suggestions are appreciated: [Contact](https://hexcloud.co/contact)
+Suggestions and questions: [Contact](https://hexcloud.co/contact)
