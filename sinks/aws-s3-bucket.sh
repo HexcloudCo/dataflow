@@ -14,7 +14,7 @@ PROFILE="$1"
 REGION="$2"
 BUCKET="$3"
 
-NAME="hexcloud-dataflow-$BUCKET"
+NAME="hex-df-$BUCKET"
 
 # create bucket
 aws --profile=$PROFILE --region=$REGION s3 mb s3://$BUCKET

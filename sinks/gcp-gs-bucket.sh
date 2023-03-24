@@ -13,7 +13,7 @@ PROJECT="$1"
 REGION="$2"
 BUCKET="$3"
 
-NAME="hexcloud-dataflow-$BUCKET"
+NAME="hex-df-$BUCKET"
 ROLE="$(echo $NAME | tr '-' '_')"
 
 GCLOUD="gcloud --project=$PROJECT"

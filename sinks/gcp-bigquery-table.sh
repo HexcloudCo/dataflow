@@ -14,7 +14,7 @@ DATASET="$2"
 TABLE="$3"
 SCHEMA="$4"  # a file
 
-NAME="hexcloud-dataflow-$DATASET-$TABLE"
+NAME="hex-df-$DATASET-$TABLE"
 ROLE="$(echo $NAME | tr '-' '_')"
 
 GCLOUD="gcloud --project=$PROJECT"
