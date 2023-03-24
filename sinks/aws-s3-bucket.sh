@@ -25,11 +25,11 @@ AK="$(aws --profile=$PROFILE --region=$REGION iam create-access-key --output=jso
 
 # create policy and attach to user - we request PubObject and ListBucket on the given bucket
 POLICY='{"Version": "2012-10-17", "Statement": [{"Effect": "Allow", "Action": ["s3:PutObject", "s3:ListBucket"], "Resource": ["arn:aws:s3:::'$BUCKET'", "arn:aws:s3:::*/*"]}]}'
-PO="$(aws --profile=$PROFILE --region=$REGION iam create-policy --output=json --policy-name=$NAME --policy-document="$POLICY")"
+POL="$(aws --profile=$PROFILE --region=$REGION iam create-policy --output=json --policy-name=$NAME --policy-document="$POLICY")"
 ARN="$(echo $POL | jq -r .Policy.Arn)"
 aws --profile=$PROFILE --region=$REGION iam attach-user-policy --user-name=$NAME --policy-arn=$ARN
 
 AKID="$(echo $AK | jq -r .AccessKey.AccessKeyId)"
 SK="$(echo $AK | jq -r .AccessKey.SecretAccessKey)"
 
-echo "Success, here are the auth params: {\"region\": \"$REGION\", \"access_key\" \"AKID\" \"secret_key\" \"SK\"}"
+echo "Success, here are the auth params: {\"region\": \"$REGION\", \"access_key\": \"$AKID\", \"secret_key\": \"$SK\"}"
