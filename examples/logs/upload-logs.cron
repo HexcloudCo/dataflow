@@ -1,0 +1,5 @@
+SHELL=/bin/bash
+
+# drop this in /etc/cron.d/ on most systems
+
+30 6 * * * root /path/to/upload-logs.sh FLOW_ID "$(hostname)/$(date -d '1 day ago' +'%Y-%m-%d')" /var/log/*.1

@@ -11,7 +11,7 @@ shift
 PREFIX="$1"    # "$(date +'%Y%m%d')/$(hostname)"
 shift
 
-FLOW_URL="https://local.hexc.io/v1/flow/$FLOW_ID/upload"
+FLOW_URL="https://hexcloud.co/v1/flow/$FLOW_ID/upload"
 
 for fin in $*; do
   echo "Uploading $fin"
