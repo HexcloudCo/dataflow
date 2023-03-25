@@ -11,16 +11,25 @@ shift
 PREFIX="$1"    # "$(date +'%Y%m%d')/$(hostname)"
 shift
 
-FLOW_URL="https://hexcloud.co/v1/flow/$FLOW_ID/upload"
+FLOW_URL="https://local.hexc.io/v1/flow/$FLOW_ID/upload"
 
 for fin in $*; do
   echo "Uploading $fin"
-  fname="$(basename $fin)"
+  fname="$(basename "$fin")"
   fout="$fin"
+  tmp=""
+
+  # gzip to temp file before send
   if [[ "$fin" != "*.gz" ]]; then
-    fout="$(mktemp)"
+    tmp="$(mktemp)"
+    fout="$tmp"
     fname="${fname}.gz"
-    gzip -c $fin > $fout
+    gzip -c "$fin" > "$fout"
   fi
+
   curl -F "file=@$fout;filename=$fname;headers=\"Path:$PREFIX\"" $FLOW_URL
+
+  if [ "$tmp" != "" ]; then
+    rm "$tmp"
+  fi
 done
