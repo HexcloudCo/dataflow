@@ -16,28 +16,6 @@ import requests
 
 flow_id = sys.argv[1]
 
-# BigQuery schema - we add the common properties and the polymorphic properties
-# to the same table making the optional fields nullable
-fields = [
-    {'name': 'id', 'type': 'string', 'mode': 'required'},
-    {'name': 'type', 'type': 'string', 'mode': 'required'},
-    {'name': 'ts', 'type': 'timestamp', 'mode': 'required'},
-    {'name': 'properties', 'type': 'string', 'mode': 'nullable'},
-
-    # metric
-    {'name': 'metric', 'type': 'string', 'mode': 'nullable'},
-    {'name': 'value', 'type': 'integer', 'mode': 'nullable'},
-    
-    # log
-    {'name': 'msg', 'type': 'string', 'mode': 'nullable'},
-    
-    # event
-    {'name': 'app', 'type': 'string', 'mode': 'nullable'},
-    {'name': 'event', 'type': 'string', 'mode': 'nullable'},
-]
-
-print(json.dumps(fields, indent=2))
-
 while 1:
     x = random.randint(0, 1000)
     evt = {

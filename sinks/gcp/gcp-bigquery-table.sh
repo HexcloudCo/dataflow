@@ -13,6 +13,7 @@ PROJECT="$1"
 DATASET="$2"
 TABLE="$3"
 SCHEMA="$4"  # a file
+TIME_PART_FIELD="$5"
 
 NAME="hex-df-$DATASET-$TABLE"
 ROLE="$(echo $NAME | tr '-' '_')"
@@ -20,8 +21,8 @@ ROLE="$(echo $NAME | tr '-' '_')"
 GCLOUD="gcloud --project=$PROJECT"
 BQ="bq --project_id=$PROJECT"
 
-$BQ mk ${DATASET}
-$BQ mk --time_partitioning_field=ts --schema=$SCHEMA ${DATASET}.${TABLE}
+$BQ show ${DATASET} || $BQ mk ${DATASET}
+$BQ mk --time_partitioning_field=$TIME_PART_FIELD --schema=$SCHEMA ${DATASET}.${TABLE}
 
 $GCLOUD iam service-accounts create $NAME
 

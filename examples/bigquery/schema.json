@@ -1,0 +1,11 @@
+[
+  {"name": "id", "type": "string", "mode": "required"},
+  {"name": "type", "type": "string", "mode": "required"},
+  {"name": "ts", "type": "timestamp", "mode": "required"},
+  {"name": "properties", "type": "string", "mode": "nullable"},
+  {"name": "metric", "type": "string", "mode": "nullable"},
+  {"name": "value", "type": "integer", "mode": "nullable"},
+  {"name": "msg", "type": "string", "mode": "nullable"},
+  {"name": "app", "type": "string", "mode": "nullable"},
+  {"name": "event", "type": "string", "mode": "nullable"}
+]

@@ -32,4 +32,6 @@ aws --profile=$PROFILE --region=$REGION iam attach-user-policy --user-name=$NAME
 AKID="$(echo $AK | jq -r .AccessKey.AccessKeyId)"
 SK="$(echo $AK | jq -r .AccessKey.SecretAccessKey)"
 
-echo "Success, here are the auth params: {\"region\": \"$REGION\", \"access_key\": \"$AKID\", \"secret_key\": \"$SK\"}"
+echo "{\"region\": \"$REGION\", \"access_key\": \"$AKID\", \"secret_key\": \"$SK\"}" > $NAME.json
+
+echo "Success, here are the auth params: $(cat $NAME.json)"
