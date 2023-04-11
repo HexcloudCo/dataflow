@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script src="https://unpkg.com/analytics/dist/analytics.min.js"></script>
+  <script src="a.js"></script>
+  <script>
+    var analytics = HAInit("my-app-name", "your-flow-id", true)
+    // log a page event
+    analytics.page()
+
+    // track an event
+    analytics.track('foo', {'foo': 'bar'})
+
+    // identify a user
+    analytics.identify('abc123', {'name': 'matt'})
+  </script>
+</head>
+<body>
+  Test
+</body>
+</html>

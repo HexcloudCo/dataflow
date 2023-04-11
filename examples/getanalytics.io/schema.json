@@ -1,0 +1,13 @@
+[
+  {"name": "type", "type": "string"},
+  {"name": "app", "type": "string"},
+  {"name": "anonymousId", "type": "string"},
+  {"name": "receivedAt", "type": "timestamp"},
+  {"name": "sentAt", "type": "timestamp"},
+  {"name": "ip", "type": "string"},
+  {"name": "headers", "type": "string"},
+  {"name": "event", "type": "string", "mode": "nullable"},
+  {"name": "properties", "type": "string", "mode": "nullable"},
+  {"name": "traits", "type": "string", "mode": "nullable"},
+  {"name": "userId", "type": "string", "mode": "nullable"}
+]
